@@ -5,10 +5,14 @@ name = "pypi"
 
 [scripts]
 prepare = "pre-commit install"
-start = "streamlit run app/main.py"
+start = "streamlit run main.py"
 
 [packages]
 streamlit = "*"
+langgraph = "*"
+langsmith = "*"
+langchain = "*"
+langchain-ollama = "*"
 
 [dev-packages]
 pre-commit = "*"
