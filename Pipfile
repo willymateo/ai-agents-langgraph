@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [scripts]
+prepare = "pre-commit install"
 start = "streamlit run app/main.py"
 
 [packages]
