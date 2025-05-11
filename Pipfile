@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+start = "streamlit run app/main.py"
+
+[packages]
+streamlit = "*"
+
+[dev-packages]
+pre-commit = "*"
+
+[requires]
+python_version = "3.13"
