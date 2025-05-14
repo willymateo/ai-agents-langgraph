@@ -1,9 +1,19 @@
 import os
 
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
+
+memory_agent_page = st.Page(
+    os.path.join(current_dir, "app", "pages", "memory_agent", "streamlit_page.py"),
+    url_path="/memory_agent",
+    title="Memory Agent",
+    icon="💾",
+)
 document_context_agent_page = st.Page(
     os.path.join(
         current_dir, "app", "pages", "document_context_agent", "streamlit_page.py"
@@ -12,17 +22,11 @@ document_context_agent_page = st.Page(
     title="Document Context Agent",
     icon="📖",
 )
-api_call_agent_page = st.Page(
-    os.path.join(current_dir, "app", "pages", "api_call_agent", "streamlit_page.py"),
-    url_path="/api_call_agent",
-    title="API Call Agent",
+podcast_agent_page = st.Page(
+    os.path.join(current_dir, "app", "pages", "podcast_agent", "streamlit_page.py"),
+    url_path="/podcast_agent",
+    title="Podcast Agent",
     icon="🔗",
-)
-memory_agent_page = st.Page(
-    os.path.join(current_dir, "app", "pages", "memory_agent", "streamlit_page.py"),
-    url_path="/memory_agent",
-    title="Memory Agent",
-    icon="💾",
 )
 main_page = st.Page(
     os.path.join(current_dir, "app", "pages", "home.py"),
@@ -32,6 +36,16 @@ main_page = st.Page(
 )
 
 pg = st.navigation(
-    [main_page, document_context_agent_page, api_call_agent_page, memory_agent_page]
+    [
+        main_page,
+        memory_agent_page,
+        document_context_agent_page,
+        podcast_agent_page,
+    ]
 )
+
+st.session_state.ai_model_id = st.sidebar.selectbox(
+    label="AI Model", options=["llama3.1:8b", "qwen3:14b", "deepseek-r1:14b"], index=0
+)
+
 pg.run()
