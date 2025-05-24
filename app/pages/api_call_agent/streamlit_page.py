@@ -1,3 +1,0 @@
-import streamlit as st
-
-st.title("AI Agent with API calls")

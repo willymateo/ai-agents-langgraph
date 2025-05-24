@@ -13,6 +13,7 @@ langgraph = "*"
 langsmith = "*"
 langchain = "*"
 langchain-ollama = "*"
+crawl4ai = "*"
 
 [dev-packages]
 pre-commit = "*"
