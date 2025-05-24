@@ -14,13 +14,13 @@ memory_agent_page = st.Page(
     title="Memory Agent",
     icon="💾",
 )
-document_context_agent_page = st.Page(
+academic_research_agent_page = st.Page(
     os.path.join(
-        current_dir, "app", "pages", "document_context_agent", "streamlit_page.py"
+        current_dir, "app", "pages", "academic_research_agent", "streamlit_page.py"
     ),
-    url_path="/document_context_agent",
-    title="Document Context Agent",
-    icon="📖",
+    url_path="/academic_research_agent",
+    title="Academic Research Agent",
+    icon="🔬",
 )
 podcast_agent_page = st.Page(
     os.path.join(current_dir, "app", "pages", "podcast_agent", "streamlit_page.py"),
@@ -39,7 +39,7 @@ pg = st.navigation(
     [
         main_page,
         memory_agent_page,
-        document_context_agent_page,
+        academic_research_agent_page,
         podcast_agent_page,
     ]
 )
